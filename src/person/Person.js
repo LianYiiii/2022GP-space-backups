@@ -24,7 +24,7 @@ export default function Person() {
     <Layout className="layout" style={{ height: '100%' }}>
       <Header style={{ position: 'fixed', zIndex: 1, width: '100%', padding: '0 8%' }}>
         <div className="logo">
-          <Link to='/'>
+          <Link to='/' title='home'>
             <h1>Personal Space</h1>
             {/* <img className='logoimg' src={Logo}></img> */}
           </Link>

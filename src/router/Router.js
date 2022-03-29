@@ -16,7 +16,7 @@ export default function Router() {
                     {/* <Route path='/' element={<IndexSpace />} /> */}
                 </Route>
                 <Route path='/' element={<IndexSpace />} >
-                    <Route path='mine' element={<Mine />} />
+                    <Route path='/mine' element={<Mine />} />
                 </Route>
                 <Route path='*' element={<NotFound />} />
                 <Route path='person' element={<Person />} />

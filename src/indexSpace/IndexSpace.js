@@ -1,18 +1,14 @@
 import React from 'react'
 import './IndexSpace.css'
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu } from 'antd';
 import Headshot from '../Components/Headshot';
-// import PerContent from '../Components/PerContent';
 import AddComment from '../Components/AddComment';
 import { Link } from 'react-router-dom';
 import UserDropdown from '../Components/UserDropdown';
-import Logo from '../Image/peiqi.jpg'
+import PrintContent from '../Components/PrintContent';
+import PerContent from '../Components/PerContent';
 
 const { Header, Content, Footer } = Layout;
-
-const printContent = () => {
-    
-}
 
 export default function IuseIndex() {
     return (
@@ -51,11 +47,8 @@ export default function IuseIndex() {
                 </Header>
                 <Content style={{ padding: '100px 50px 0px', height: 'auto' }}>
                     <div className="site-layout-content">
-                        <AddComment />
-                        {/* <PerContent >
-                            <PerContent></PerContent>
-                        </PerContent>
-                        <PerContent /><PerContent /><PerContent /><PerContent /> */}
+                        {/* <AddComment /> */}
+                        <PrintContent />
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>----- END -----</Footer>
