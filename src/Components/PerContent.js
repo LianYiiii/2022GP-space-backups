@@ -4,7 +4,8 @@ import moment from 'moment';
 import { DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled } from '@ant-design/icons';
 import AddComment from './AddComment';
 
-const Demo = () => {
+const Demo = (props) => {
+    console.log(props);
     const [likes, setLikes] = useState(0);
     const [dislikes, setDislikes] = useState(0);
     // const [addReplay, setReplay] = useState(0);
