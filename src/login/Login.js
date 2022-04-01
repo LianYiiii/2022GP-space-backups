@@ -8,21 +8,11 @@ import { render } from '@testing-library/react';
 import { createBrowserHistory } from 'history';
 
 
-
-
-
-
-
 class NormalLoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
-
-    // 发表单 axios
-
-
-    // 验证数据
 
     onFinish = (values) => {
         console.log('Received values of form: ', values);
@@ -31,9 +21,12 @@ class NormalLoginForm extends React.Component {
             password: values.password
         }
 
+        // 发表单 axios
+
         axios.post('http://192.168.43.118:8000/api/accounts/login/', inputInfo).then(res => {
             // if (result.status === 200 || result.status === 304) {
             message.success('welcome');
+            // 验证数据
 
             const user_id = res.data.user.id;
             localStorage.setItem('token', res.data.token);
@@ -44,14 +37,6 @@ class NormalLoginForm extends React.Component {
         }).catch(err => {
             message.error('error');
         })
-
-
-        // const history = createBrowserHistory();
-        // this.props.history.replace('/')
-        // const navigate = useNavigate();
-        // navigate('/');
-        // console.log(this.props);
-
 
     };
 
