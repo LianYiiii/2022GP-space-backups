@@ -3,12 +3,12 @@ import { Comment, Tooltip, Avatar } from 'antd';
 import moment from 'moment';
 import { DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled } from '@ant-design/icons';
 import AddComment from './AddComment';
+import { ConConsumer } from './PerCon';
 
 const Demo = (props) => {
-    console.log(props);
+    // console.log(props);
     const [likes, setLikes] = useState(0);
     const [dislikes, setDislikes] = useState(0);
-    // const [addReplay, setReplay] = useState(0);
     const [action, setAction] = useState(null);
 
     const like = () => {
@@ -45,24 +45,27 @@ const Demo = (props) => {
         <span key="comment-basic-reply-to" >Reply to</span>,
     ];
     const ExampleComment = ({ children }) => (
-        <Comment
-            actions={actions}
-            author={<a>Han Solo</a>}
-            avatar={<Avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />}
-            content={
-                <p>
-                    We supply a series of design principles, practical patterns and high quality design
-                    resources (Sketch and Axure).
-                </p>}
-            datetime={
-                <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
-                    <span>{moment().fromNow()}</span>
-                </Tooltip>
-            }
+        <ConConsumer>
+            
+            <Comment
+                actions={actions}
+                author={<a>{author}</a>}
+                avatar={<Avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />}
+                content={
+                    <p>
+                        We supply a series of design principles, practical patterns and high quality design
+                        resources (Sketch and Axure).
+                    </p>}
+                datetime={
+                    <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
+                        <span>{moment().fromNow()}</span>
+                    </Tooltip>
+                }
 
-        >
-            {children}
-        </Comment >
+            >
+                {children}
+            </Comment >
+        </ConConsumer>
     );
 
     return (
