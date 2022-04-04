@@ -1,10 +1,8 @@
 import { convertLegacyProps } from 'antd/lib/button/button';
 import axios from 'axios';
-import React, { Component, createContext, useEffect, useState } from 'react'
+import React, { Component, useEffect, useState } from 'react'
 import PerContent from './PerContent';
-import { ConProvider } from './PerCon';
 
-const { Provider, Consumer } = createContext();
 
 const RequestAjax = (() => {
     const renderInfo = [];
@@ -62,9 +60,7 @@ const RequestAjax = (() => {
         // console.log(author, content, createTime); //打印成功
         // console.log(index);
         renderInfo.push(
-            <ConProvider value={{ author: author, content: content, createTime: createTime }} key={index}>
-                <PerContent key={index} />
-            </ConProvider>
+            <PerContent key={index} author={author} content={content} createTime={createTime} />
         )
         // setIsloading(false);
 
