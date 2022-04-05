@@ -23,7 +23,10 @@ class NormalLoginForm extends React.Component {
 
         // 发表单 axios
 
-        axios.post('http://10.0.1.119:8000/api/accounts/login/', inputInfo).then(res => {
+        axios.post(
+            // 'http://10.0.1.119:8000/api/accounts/login/'
+            'http://192.168.2.110:8000/api/accounts/login/'
+            , inputInfo).then(res => {
             // if (result.status === 200 || result.status === 304) {
             message.success('welcome');
             // 验证数据

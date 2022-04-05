@@ -22,7 +22,7 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
         </Form.Item>
         <Form.Item>
             <Button htmlType="submit" loading={submitting} onClick={onSubmit} type="primary"
-                style={{ width: '20%' }}>
+                style={{ width: '25%' }}>
                 Add Comment
             </Button>
         </Form.Item>

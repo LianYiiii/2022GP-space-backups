@@ -1,16 +1,14 @@
-import React from "react";
-import "./IndexSpace.css";
+import React, { Component } from "react";
+import "../indexSpace/IndexSpace.css";
 import { Layout, Menu } from "antd";
 import Headshot from "../Components/Headshot";
-import AddComment from "../Components/AddComment";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import UserDropdown from "../Components/UserDropdown";
-import PrintContent from "../Components/PrintContent";
-import PerContent from "../Components/PerContent";
+import PerDynamic from "./PerDynamic";
 
 const { Header, Content, Footer } = Layout;
 
-export default function IuseIndex() {
+export default function DetailContents() {
   return (
     <>
       <Layout className="layout" style={{ height: "auto" }}>
@@ -41,17 +39,11 @@ export default function IuseIndex() {
             <Menu.Item key="2">
               <Link to="mine">我的</Link>
             </Menu.Item>
-            {/* <Menu.Item key="3">
-                            <Link to='tree' >
-                                目录树
-                            </Link>
-                        </Menu.Item> */}
           </Menu>
         </Header>
         <Content style={{ padding: "100px 50px 0px", height: "auto" }}>
           <div className="site-layout-content">
-            {/* <AddComment /> */}
-            <PrintContent />
+            <PerDynamic></PerDynamic>
           </div>
         </Content>
         <Footer style={{ textAlign: "center", color: "darkgray" }}>
